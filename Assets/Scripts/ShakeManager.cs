@@ -6,22 +6,51 @@ public class ShakeManager : MonoBehaviour
 {
     private Shake shake;
 
-    [SerializeField]
-    float duration, magnitude;
     void Start()
     {
         shake = GameObject.FindGameObjectWithTag("Shake").GetComponent<Shake>();
-        Debug.Log(shake.gameObject.name);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void shakeCamera(float magnitude)
     {
-        
+        StartCoroutine(shake.shakeCam(magnitude));
     }
 
-    public void shakeCamera()
+    public void onPressed(string pressedButton)
     {
-        StartCoroutine(shake.shakeCam(duration, magnitude));
+        switch(pressedButton)
+        {
+            case "kiri":
+                {
+                    Shake.left = true;
+                    Debug.Log("a");
+                    break;
+                }
+            case "kanan":
+                {
+                    Shake.right = true;
+                    Debug.Log("b");
+                    break;
+                }
+        }
+    }
+
+    public void onLift(string pressedButton)
+    {
+        switch (pressedButton)
+        {
+            case "kiri":
+                {
+                    Shake.left = false;
+                    Debug.Log("c");
+                    break;
+                }
+            case "kanan":
+                {
+                    Shake.right = false;
+                    Debug.Log("d");
+                    break;
+                }
+        }
     }
 }
