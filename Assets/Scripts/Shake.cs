@@ -32,15 +32,16 @@ public class Shake : MonoBehaviour
             {
                 magnitudeText.text = "RAWAN";
                 magnitudeText.color = new Color(1.0f, 0.0f, 0.0f);
-                float x = Random.Range(-1f, 1f) * magnitude;
-                float y = Random.Range(-1f, 1f) * magnitude;
-
-                backgorund.uvRect = new Rect(x, y, 1, 1);
-                elapsed += Time.deltaTime;
             }
 
+            float x = Random.Range(-1f, 1f) * magnitude;
+            float y = Random.Range(-1f, 1f) * magnitude;
+
+            backgorund.uvRect = new Rect(x, y, 1, 1);
+            elapsed += Time.deltaTime;
             yield return 0;
         }
+        magnitudeText.text = "";
         backgorund.uvRect = new Rect(0, 0, 1, 1);
     }
 }

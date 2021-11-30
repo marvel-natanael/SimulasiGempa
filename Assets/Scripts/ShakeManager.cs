@@ -23,13 +23,11 @@ public class ShakeManager : MonoBehaviour
             case "kiri":
                 {
                     Shake.left = true;
-                    Debug.Log("a");
                     break;
                 }
             case "kanan":
                 {
                     Shake.right = true;
-                    Debug.Log("b");
                     break;
                 }
         }
@@ -42,13 +40,11 @@ public class ShakeManager : MonoBehaviour
             case "kiri":
                 {
                     Shake.left = false;
-                    Debug.Log("c");
                     break;
                 }
             case "kanan":
                 {
                     Shake.right = false;
-                    Debug.Log("d");
                     break;
                 }
         }
